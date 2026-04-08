@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briac Turquety - Portfolio & CV</title>
+    <style>
+        :root {
+            --primary-color: #0a66c2;
+            --secondary-color: #e8f3ff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --bg-color: #f3f2ef;
+            --white: #ffffff;
+            --border-color: #ebebeb;
+            --accent-color: #d74b34; /* Une couleur d'accentuation pour la section "Recherche" */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* En-tête */
+        .header-section {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        h1 { margin: 0 0 10px 0; font-size: 32px; color: #000; }
+        h2 { margin: 0 0 15px 0; font-size: 18px; font-weight: 500; color: var(--primary-color); }
+        .location { font-size: 15px; color: var(--text-muted); }
+        
+        /* Section Recherche Active */
+        .research-alert {
+            background-color: #fff9e6;
+            border-left: 5px solid #f5b041;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .research-alert h3 {
+            margin-top: 0;
+            color: #b97700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .research-alert p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+
+        /* Titres de section */
+        h3.section-title {
+            font-size: 22px;
+            color: #000;
+            margin: 0 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        /* Expériences et Formations */
+        .item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+        }
+        .title { font-weight: 700; font-size: 18px; margin: 0; color: #000; }
+        .company { font-size: 16px; font-weight: 600; color: var(--primary-color); margin: 0; }
+        .duration { font-size: 14px; color: var(--text-muted); font-style: italic; }
+        .description { font-size: 15px; margin-top: 10px; }
+        
+        /* Sous-expériences (ex: Crédit Agricole) */
+        .nested-experience {
+            margin-left: 25px;
+            padding-left: 20px;
+            border-left: 2px solid var(--border-color);
+            margin-top: 20px;
+        }
+        .nested-item { margin-bottom: 20px; }
+        .nested-item:last-child { margin-bottom: 0; }
+
+        /* Listes */
+        ul { margin-top: 8px; margin-bottom: 10px; padding-left: 20px; }
+        li { margin-bottom: 6px; }
+
+        /* Tags / Compétences */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .tag {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        /* Grille pour les compétences et langues */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .item-header { flex-direction: column; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- En-tête du profil -->
+        <div class="section header-section">
+            <h1>Briac Turquety</h1>
+            <h2>Alternance Business Analyst | Business Consultant | AI & Data Student</h2>
+            <div class="location">📍 Paris / Rennes, France | 🎓 Eugenia School | 💼 Centric Software</div>
+        </div>
+
+        <!-- ENCART DE RECHERCHE -->
+        <div class="research-alert">
+            <h3>🎯 Objectif & Recherche Active</h3>
+            <p>
+                <strong>À la recherche de nouveaux défis en Data & Business Analysis.</strong><br>
+                Actuellement en <em>MSc Business Analytics and AI applied to Business</em>, je combine un profil hybride mêlant l'analyse de données, l'intelligence artificielle et la stratégie d'entreprise. Fort d'une rigueur acquise via la rédaction d'articles scientifiques et mon expérience en consulting technique (SQL, API, PLM), je suis activement en recherche d'opportunités me permettant d'explorer, de structurer et de valoriser la donnée au service de la prise de décision.
+            </p>
+        </div>
+
+        <!-- Section Expérience -->
+        <div class="section">
+            <h3 class="section-title">Expérience Professionnelle</h3>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <p class="title">Business Consultant</p>
+                        <p class="company">Centric Software</p>
+                    </div>
+                    <p class="duration">sept. 2025 - aujourd’hui · 8 mois | Hybride (Paris)</p>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Implémentation et configuration des solutions Centric PLM pour les marques.</li>
+                        <li>Collaboration avec les clients et les équipes internes pour fournir des solutions sur mesure.</li>
+                        <li>Gestion de la migration de données et des systèmes d'intégration (SQL, XML, APIs).</li>
+                        <li>Fourniture de formations techniques et d'un support continu.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <p class="title">Conseiller de vente (Spécialisé)</p>
+                        <p class="company">GROUPE SONOWEST</p>
+                    </div>
+                    <p class="duration">sept. 2023 - août 2025 · 2 ans | Rennes</p>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Conseil et vente d'instruments de musique (guitare, batterie, piano).</li>
+                        <li>Développement du magasin, gestion des stocks et traitement des demandes SAV.</li>
+                        <li>Prestations techniques sur des festivals (Textures...) et organisation de Masterclasses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <p class="title">Roadie / Technicien Plateau</p>
+                        <p class="company">Hellfest Productions</p>
+                    </div>
+                    <p class="duration">juin 2022 - juin 2024 · 2 ans 1 mois | Clisson</p>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Préparation, montage, réglage et démontage des moyens techniques et logistiques (son, lumière, scène).</li>
+                        <li>Participation active à la réalisation et l'exploitation des spectacles et événements culturels.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <p class="title">Intervenant Pédagogique & Professeur de Guitare</p>
+                        <p class="company">Le Pont Supérieur & School Music West</p>
+                    </div>
+                    <p class="duration">sept. 2022 - janv. 2024 | Rennes</p>
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>Intervenant en Musiques Actuelles (Le Pont Supérieur) : cours techniques, théoriques et d'improvisation.</li>
+                        <li>Professeur (School Music West) : apprentissage auprès de 45 élèves, organisation de concerts et mise en place scénique.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Expérience Crédit Agricole avec sous-éléments -->
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <p class="title">Groupe Bancaire - Divers postes</p>
+                        <p class="company">Crédit Agricole d'Ille-et-Vilaine / Bretagne</p>
+                    </div>
+                    <p class="duration">sept. 2019 - août 2022 · 3 ans | Bretagne</p>
+                </div>
+                
+                <div class="nested-experience">
+                    <div class="nested-item">
+                        <p class="title">Technicien / Conseiller E-Fraude</p>
+                        <p class="duration">janv. 2022 - août 2022 · 8 mois</p>
+                        <div class="description">
+                            <ul>
+                                <li>Traitement des dossiers fraude, alertes, réclamations et proposition d'actions curatives et préventives (cybersécurité).</li>
+                                <li>Accompagnement des clients face aux suspicions de fraude et assistance du réseau d'agences.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="nested-item">
+                        <p class="title">Conseiller Clientèle Particuliers (CDD & Alternance)</p>
+                        <p class="duration">sept. 2020 - déc. 2021 · 1 an et 4 mois</p>
+                        <div class="description">
+                            <ul>
+                                <li>Analyse des profils financiers et accompagnement des clients dans leurs projets (financement, épargne).</li>
+                                <li>Suivi réglementaire et conformité (lutte contre la fraude, normes KYC/AML).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="nested-item">
+                        <p class="title">Technicien Bancaire</p>
+                        <p class="duration">sept. 2019 - août 2020 · 1 an</p>
+                        <div class="description">
+                            <ul>
+                                <li>Analyse financière d'offres de prêts habitats et déblocage d’appels de fonds notariés.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Section Formation -->
+        <div class="section">
+            <h3 class="section-title">Formation</h3>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <p class="title">MSc Business Analytics and AI applied to Business</p>
+                        <p class="company">Eugenia School</p>
+                    </div>
+                    <p class="duration">sept. 2025 – juin 2027</p>
+                </div>
+                <div class="description">
+                    Récolte, visualisation et analyse de données, Code, Stratégie, Finance, Marketing.<br>
+                    <strong>Outils :</strong> Python, SQL, PowerBI, Salesforce, Google Analytics, Dataiku, Tableau.
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <p class="title">Licence professionnelle Banque & Assurance</p>
+                        <p class="company">Université de Rennes</p>
+                    </div>
+                    <p class="duration">sept. 2020 – juil. 2021 | Mention Assez Bien</p>
+                </div>
+                <div class="description">
+                    Apprentissage théorique et pratique des produits issus du système bancaire (réalisé en alternance).
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <!-- Section Certifications & Compétences -->
+            <div class="section">
+                <h3 class="section-title">Certifications & Compétences</h3>
+                
+                <div class="item" style="border: none; padding: 0; margin-bottom: 15px;">
+                    <p class="title" style="font-size: 16px;">🏆 Vainqueur du Hackathon Make/Dust</p>
+                    <p class="company" style="font-size: 14px; font-weight: normal;">Eugenia School (Nov. 2025)</p>
+                </div>
+
+                <div class="item" style="border: none; padding: 0;">
+                    <p class="title" style="font-size: 16px;">📊 Dataiku Core Designer</p>
+                    <p class="company" style="font-size: 14px; font-weight: normal;">Dataiku (Janv. 2026) - Score : 25/25</p>
+                </div>
+
+                <div class="tags-container" style="margin-top: 20px;">
+                    <span class="tag">Business Analysis</span>
+                    <span class="tag">Data & IA</span>
+                    <span class="tag">SQL / APIs</span>
+                    <span class="tag">Recherche Scientifique</span>
+                    <span class="tag">Finance</span>
+                </div>
+            </div>
+
+            <!-- Section Langues -->
+            <div class="section">
+                <h3 class="section-title">Langues</h3>
+                
+                <div class="item" style="border: none; padding: 0; margin-bottom: 15px;">
+                    <p class="title" style="font-size: 16px;">🇬🇧 Anglais</p>
+                    <p class="duration" style="margin:0;">Capacité professionnelle complète</p>
+                </div>
+                
+                <div class="item" style="border: none; padding: 0; margin-bottom: 15px;">
+                    <p class="title" style="font-size: 16px;">🇫🇷 Français</p>
+                    <p class="duration" style="margin:0;">Langue maternelle</p>
+                </div>
+
+                <div class="item" style="border: none; padding: 0;">
+                    <p class="title" style="font-size: 16px;">🇩🇪 Allemand</p>
+                    <p class="duration" style="margin:0;">Capacité professionnelle limitée</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
